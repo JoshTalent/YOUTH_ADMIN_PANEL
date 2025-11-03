@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;/* 1️⃣ Body background with subtle gradients */
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top left, #e0f2fe, #ffffff);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2️⃣ Abstract blurred shapes for professional look */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.15); /* Blue */
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  background: rgba(30, 64, 175, 0.15); /* Darker blue */
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: -1;
+}
+
+
+
+/* 4️⃣ Tables responsive scroll */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background-color: #bfdbfe; /* Light Blue */
+}
+tbody tr:hover {
+  background-color: #dbeafe; /* Hover Blue */
+}
+td, th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+/* 5️⃣ Buttons hover/focus */
+button {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  border-radius: 0.375rem;
+}
+
+/* 6️⃣ Forms input focus */
+input, select, textarea {
+  transition: all 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-radius: 0.375rem;
+  border-color: #3b82f6; /* Blue */
+}
+
+/* 7️⃣ Cards shadow and rounded corners */
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 8️⃣ Responsive utilities (optional if Tailwind already used) */
+@media (max-width: 640px) {
+  .grid-cols-4 { grid-template-columns: repeat(1, 1fr); }
+  .grid-cols-2 { grid-template-columns: repeat(1, 1fr); }
+}
